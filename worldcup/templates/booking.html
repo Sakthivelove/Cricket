@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Booking Form HTML Template</title>
+  <style>
+    f.section {
+      position: relative;
+      height: 100vh
+    }
+
+    .section .section-center {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%)
+    }
+
+    #booking {
+      font-family: montserrat, sans-serif;
+      background-image: url(./background.jpg);
+      background-size: auto;
+      background-position: center
+    }
+
+    #booking::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      background: rgba(47, 103, 177, .6)
+    }
+
+    .booking-form {
+      background-color: #fff;
+      padding: 50px 20px;
+      -webkit-box-shadow: 0 5px 20px -5px rgba(0, 0, 0, .3);
+      box-shadow: 0 5px 20px -5px rgba(0, 0, 0, .3);
+      border-radius: 4px
+    }
+
+    .booking-form .form-group {
+      position: relative;
+      margin-bottom: 30px
+    }
+
+    .booking-form .form-control {
+      background-color: #ebecee;
+      border-radius: 4px;
+      border: none;
+      height: 40px;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      color: #3e485c;
+      font-size: 14px
+    }
+
+    .booking-form .form-control::-webkit-input-placeholder {
+      color: rgba(62, 72, 92, .3)
+    }
+
+    .booking-form .form-control:-ms-input-placeholder {
+      color: rgba(62, 72, 92, .3)
+    }
+
+    .booking-form .form-control::placeholder {
+      color: rgba(62, 72, 92, .3)
+    }
+
+    .booking-form input[type=date].form-control:invalid {
+      color: rgba(62, 72, 92, .3)
+    }
+
+    .booking-form select.form-control {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none
+    }
+
+    .booking-form select.form-control+.select-arrow {
+      position: absolute;
+      right: 0;
+      bottom: 4px;
+      width: 32px;
+      line-height: 32px;
+      height: 32px;
+      text-align: center;
+      pointer-events: none;
+      color: rgba(62, 72, 92, .3);
+      font-size: 14px
+    }
+
+    .booking-form select.form-control+.select-arrow:after {
+      content: '\279C';
+      display: block;
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg)
+    }
+
+    .booking-form .form-label {
+      display: inline-block;
+      color: #3e485c;
+      font-weight: 700;
+      margin-bottom: 6px;
+      margin-left: 7px
+    }
+
+    .booking-form .submit-btn {
+      display: inline-block;
+      color: #fff;
+      background-color: #1e62d8;
+      font-weight: 700;
+      padding: 14px 30px;
+      border-radius: 4px;
+      border: none;
+      -webkit-transition: .2s all;
+      transition: .2s all
+    }
+
+    .booking-form .submit-btn:hover,
+    .booking-form .submit-btn:focus {
+      opacity: .9
+    }
+
+    .booking-cta {
+      margin-top: 80px;
+      margin-bottom: 30px
+    }
+
+    .booking-cta h1 {
+      font-size: 52px;
+      text-transform: uppercase;
+      color: #fff;
+      font-weight: 700
+    }
+
+    .booking-cta p {
+      font-size: 16px;
+      color: rgba(255, 255, 255, .8)
+    }
+  </style>
+  {% load static %}
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <img src="{% static 'assets/img/background.jpg' %}" alt="">
+  <meta name="robots" content="noindex, follow">
+  <script
+    nonce="72bf5ef2-d3f4-41fc-ab67-2feaff3728d7">(function (w, d) { !function (a, e, t, r) { a.zarazData = a.zarazData || {}; a.zarazData.executed = []; a.zaraz = { deferred: [], listeners: [] }; a.zaraz.q = []; a.zaraz._f = function (e) { return function () { var t = Array.prototype.slice.call(arguments); a.zaraz.q.push({ m: e, a: t }) } }; for (const e of ["track", "set", "debug"]) a.zaraz[e] = a.zaraz._f(e); a.zaraz.init = () => { var t = e.getElementsByTagName(r)[0], z = e.createElement(r), n = e.getElementsByTagName("title")[0]; n && (a.zarazData.t = e.getElementsByTagName("title")[0].text); a.zarazData.x = Math.random(); a.zarazData.w = a.screen.width; a.zarazData.h = a.screen.height; a.zarazData.j = a.innerHeight; a.zarazData.e = a.innerWidth; a.zarazData.l = a.location.href; a.zarazData.r = e.referrer; a.zarazData.k = a.screen.colorDepth; a.zarazData.n = e.characterSet; a.zarazData.o = (new Date).getTimezoneOffset(); a.zarazData.q = []; for (; a.zaraz.q.length;) { const e = a.zaraz.q.shift(); a.zarazData.q.push(e) } z.defer = !0; for (const e of [localStorage, sessionStorage]) Object.keys(e || {}).filter((a => a.startsWith("_zaraz_"))).forEach((t => { try { a.zarazData["z_" + t.slice(7)] = JSON.parse(e.getItem(t)) } catch { a.zarazData["z_" + t.slice(7)] = e.getItem(t) } })); z.referrerPolicy = "origin"; z.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(a.zarazData))); t.parentNode.insertBefore(z, t) };["complete", "interactive"].includes(e.readyState) ? zaraz.init() : a.addEventListener("DOMContentLoaded", zaraz.init) }(w, d, 0, "script"); })(window, document);</script>
+</head>
+
+<body>
+  <div id="booking" class="section">
+    <div class="section-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7 col-md-pull-7">
+            <div class="booking-form">
+              <form action="addrecord" method="POST" autocomplete="off">
+                {% csrf_token %}
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <span class="form-label">Team 1</span>
+                      <select class="form-control" name="team1">
+                        <option value="Afghanistan">Afghanistan</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Banglades">Bangladesh</option>
+                        <option value="England">England</option>
+                        <option value="India">India</option>
+                        <option value="New Zealand">New Zealand</option>
+                        <option value="Pakistan">Pakistan</option>
+                        <option value="South Africa">South Africa</option>
+                        <option value="Sri Lanka">Sri Lanka</option>
+                        <option value="West Indies">West Indies</option>
+                      </select>
+                      <span class="select-arrow"></span>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <span class="form-label">Team 2</span>
+                      <select class="form-control" name="team2" id="team2">
+                        <option value="Afghanistan">Afghanistan</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Banglades">Bangladesh</option>
+                        <option value="England">England</option>
+                        <option value="India">India</option>
+                        <option value="New Zealand">New Zealand</option>
+                        <option value="Pakistan">Pakistan</option>
+                        <option value="South Africa">South Africa</option>
+                        <option value="Sri Lanka">Sri Lanka</option>
+                        <option value="West Indies">West Indies</option>
+                      </select>
+                      <span class="select-arrow"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                <span class="form-label">Venue</span>
+                <input  class="form-control" type="venue" name="venue" id="venue" >
+                </div>
+                <div class="form-group">
+                <span class="form-label">Date</span>
+                <input class="form-control" type="text" name="date" id="date" >
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <span class="form-label">Adults</span>
+                      <select class="form-control" name="adult">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                      </select>
+                      <span class="select-arrow"></span>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <span class="form-label">Children</span>
+                      <select class="form-control" name="children">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                      </select>
+                      <span class="select-arrow"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-btn">
+                  <button class="submit-btn" id="book_ticket">Book Tickets</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+{% block javascript %}
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script>
+    $("#team2").change(function () {
+        const teamId = $(this).val();  // get the selected subject ID from the HTML dropdown list 
+        $.ajax({                       // initialize an AJAX request
+            type: "POST",
+            url: '{% url "get_topics_ajax" %}',
+            data: {
+                'teamId': teamId,       // add the country id to the POST parameters
+                'csrfmiddlewaretoken':$('input[name=csrfmiddlewaretoken]').val(),
+            },
+            success: function (messages) { // `data` is from `get_topics_ajax` view function
+              //console.log(messages);
+               //let html_data = '';
+              // var data_html='';
+                messages.forEach(function (data) {
+                  //console.log(data);
+                    //html_data += `<option value="${data.id}">${data.Venue}</option>`
+                    //data_html += `<option value="${data.id}">${data.Date}</option>`
+                    $("#venue").val(data.Venue);
+                    $("#date").val(data.Date);
+                });
+                //$("#venue1").html(html_data); // replace the contents of the topic input with the data that came from the server
+                //$("#date1").html(data_html);
+            }
+        });
+    });
+ 
+</script>
+$("#team1").change(function () {
+        const teamUd = $(this).val();  // get the selected subject ID from the HTML dropdown list 
+        $.ajax({                       // initialize an AJAX request
+            type: "POST",
+            url: '{% url "get_topics_ajax" %}',
+            data: {
+                'teamUd': teamUd,       // add the country id to the POST parameters
+                'csrfmiddlewaretoken':$('input[name=csrfmiddlewaretoken]').val(),
+            },
+            success: function (messages) { // `data` is from `get_topics_ajax` view function
+              //console.log(messages);
+               //let html_data = '';
+              // var data_html='';
+                messages.forEach(function (data) {
+                  //console.log(data);
+                    //html_data += `<option value="${data.id}">${data.Venue}</option>`
+                    //data_html += `<option value="${data.id}">${data.Date}</option>`
+                    $("#venue").val(data.Venue);
+                    $("#date").val(data.Date);
+                });
+                //$("#venue1").html(html_data); // replace the contents of the topic input with the data that came from the server
+                //$("#date1").html(data_html);
+            }
+        });
+    });
+    </script>
+{% endblock javascript %}

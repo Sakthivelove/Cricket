@@ -1,0 +1,15 @@
+# Ignore virtual environments and dependencies
+venv/
+.env/
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+
+# Ignore site-packages
+cricket/Lib/site-packages/
+
+# Ignore system files and IDE-specific files
+.vscode/
+.idea/
+.DS_Store
